@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .product-card { border: 1px solid #ddd; padding: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        .product-card img { width: 200px; height: 200px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <div id="results" class="product-grid"></div>
+
+    <script>
+        // Get the search query from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('query').toLowerCase();
+
+        // Product data arrays (copy from your existing JavaScript arrays)
+        const products = [
+            { prodname: "Spring Type Apaxx PVC Foot Valves", image: "http://5.imimg.com/data5/SELLER/Default/2024/3/404228298/KS/IH/UJ/19133487/spring-type-foot-valbe-250x250.jpg", proddispid: 183143050, catid: "130" },
+            { prodname: "Flap Type Apaxx PVC Foot Valves", image: "http://5.imimg.com/data5/SELLER/Default/2024/3/404227695/UK/SS/XQ/19133487/abs-taps-250x250.jpg", proddispid: 183143051, catid: "130" },
+            { prodname: "1 Inch Apaxx PVC Foot Valves", image: "http://5.imimg.com/data5/NSDMERP/Default/2022/4/UG/IK/FO/19133487/pvc-foot-valves-1649229422265-250x250.jpg", proddispid: 183145454, catid: "130" },
+            { prodname: "Apaxx PVC Ball Valves", image: "http://5.imimg.com/data5/NSDMERP/Default/2022/4/VZ/DQ/AO/19133487/apaxx-ball-valves-1649229258322-250x250.jpg", proddispid: 183145450, catid: "130" }
+        ];
+
+        const suctionHose = [
+            { prodname: "APAXX", image: "images/hosedemo.jpeg", hosesize: '1" - 2"', hoseprice: "1550.00 - 4600.00" },
+            { prodname: "AQUAFLO", image: "images/hosedemo.jpeg", hosesize: '1" - 2"', hoseprice: "1350.00 - 4275.00" }
+        ];
+
+        const gardenHose = [
+            { prodname: "Zebra", image: "images/hosedemo.jpeg", hosesize: '1/2" - 3/4" 15-100mtr', hoseprice: "390.00 - 2600.00" }
+        ];
+
+        // Combine all products for easy searching
+        const allProducts = [...products, ...suctionHose, ...gardenHose];
+
+        // Filter products based on the search query
+        const results = allProducts.filter(product => product.prodname.toLowerCase().includes(searchQuery));
+
+        // Display results
+        const resultsContainer = document.getElementById('results');
+        if (results.length > 0) {
+            resultsContainer.innerHTML = results.map(product => `
+                <div class="product-card">
+                    <img src="${product.image}" alt="${product.prodname}">
+                    <h3>${product.prodname}</h3>
+                    <p>Size: ${product.hosesize || "N/A"}</p>
+                    <p>Price: ₹${product.hoseprice || "N/A"}</p>
+                </div>
+            `).join('');
+        } else {
+            resultsContainer.innerHTML = `<p>No products found matching "${searchQuery}".</p>`;
+        }
+    </script>
+</body>
+</html>

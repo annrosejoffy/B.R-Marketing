@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.R. Marketing</title>
+    
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        
+        
+        nav a { color: #000000; margin: 0 10px; text-decoration: none; }
+    
+        
+        header{
+            display: flex;
+        }
+        h1 { 
+            font-family: "Playfair Display", serif;
+            font-size: 45px;
+            font-weight: 700;
+            margin:20px 10% 0px 2%;
+            color: white;
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            position: relative;
+            align-items: center;
+            text-align: center;
+            bottom: 25px;
+            margin: 70px 10% 0px 2%;
+            font-size: 1.2em;
+        }
+        
+        nav a{
+            font-family: "Share Tech", sans-serif;
+            background-color: #fae01e56;
+            padding: 10px 20px;
+            border-radius: 30px;
+            color: rgb(69, 69, 39);
+            font-weight: 600;
+        }
+        nav a:hover {
+            transform: scale(1.1);  /* Slightly enlarge the card */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+            background-color: #f6dc1df8; /* Change background color on hover */
+            cursor: pointer;
+        }
+        /* Search Bar Styling */
+        .search-bar{
+            display: block;
+            position: relative;
+            left:110px;
+            text-align: center;
+        }
+        .search-bar input[type="text"] { 
+            padding: 8px; 
+            width: 200px; 
+            border: 1px solid #ddd; 
+            border-radius: 15px; 
+        }
+        .search-bar button { 
+            padding: 8px 12px; 
+            border: none; 
+            background-color: #333; 
+            color: #fff; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            margin-left: 8px;
+        }
+    
+        /* Grid styling for product cards */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Fixed size for images within product cards */
+        .product-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* Ensures image is cropped to fit within the fixed size */
+            border-radius: 8px 8px 0 0;
+        }
+    
+        .product-card h3 {
+            font-size: 1.1em;
+            margin: 10px 0 5px;
+        }
+        .product-card p {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .prodtype{
+            text-align: center;
+            margin-top: 100px;
+            font-size: 35px;
+            margin-bottom: 0px;
+
+        }
+        .hosetype{
+            margin-top: 4%;
+            margin-bottom: 0%;
+            font-size: 30px;
+            text-align: center;
+        }
+        .pro{
+            font-weight: 600;
+        }
+
+        /* General styling for product cards */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Hover effect */
+.product-card:hover {
+    transform: scale(1.05);  /* Slightly enlarge the card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+    background-color: #f9f9f9; /* Change background color on hover */
+    cursor: pointer;
+}
+
+/* Optional: Style the image on hover */
+.product-card img {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);  /* Slight zoom-in effect on the image */
+}
+.introtxt{
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 55px;
+    text-transform:uppercase;
+    font-weight: 700;
+    margin: 10% 25% 20px 25%;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom:35px;
+}
+.frame {
+  background-image: url('./images/walpaper.png'); /* Replace with your image URL */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height:750px;
+  overflow: hidden;
+}
+body{
+    font-family: "Share Tech", sans-serif;
+}
+.brochure{
+    display: block;
+    width: 100%;
+    height: 150px;
+    background-color: #c2a651c7;
+    padding: 0px;
+    margin-top: -24px;
+}
+.brochure p{
+    
+    text-align: center;
+    position: relative;
+    top: 50px;
+    font-size: 1.5em;
+}
+.downlink {
+    text-decoration: none;
+    color: #f6f6f6; /* Correct color value */
+    transition: transform 0.3s ease;
+}
+
+.downlink:hover {
+    transform: scale(1.3); /* Slightly enlarge the link */
+}
+.about{
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #f6dd1d79;
+    height: max-content;
+    padding: 20px 50px 50px 50px;
+    margin-top: 60px;
+}
+
+.contact{
+    background-color: #f6dd1dd6;
+    font-size: 1.5em;
+    height: max-content;
+    padding: 20px 50px 50px 50px;
+    margin-top: -16px;
+    
+}
+/* Style for the partner list */
+/* Style for the partner list container */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* Creates two equal columns */
+    gap: 20px;  /* Space between columns */
+    padding: 20px;
+    align-items: center;  /* Vertically center the items */
+    max-width: 800px;  /* Optional: limit width of the grid */
+    margin: 0 auto;  /* Center the grid container on the page */
+}
+
+/* Style for each partner */
+.partner {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    color: #333;
+    background-color: #e8dd88d6;
+    border-radius: 19px;
+}
+
+/* Style for partner images */
+.partner img {
+    width: 50px;  /* Adjust size of the images */
+    height: 50px;
+    margin-right: 10px;  /* Space between image and text */
+}
+.logo{
+    position: relative;
+    right:-10%;
+    }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;  /* Stack header elements vertically */
+        padding: 20px 0px;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    nav{
+            display: block;
+            flex-direction: row;
+            gap: 10px;
+            position: relative;
+            align-items: center;
+            text-align: center;
+            bottom: 25px;
+            font-size: .8em;
+            white-space: nowrap;
+            margin-top: 40px;
+        }
+    .logo{
+        display: none;
+    }
+    .search-bar{
+            position: relative;
+            left: 35px;
+            top: -40px;
+    }
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.video-container {
+    width: 500px;         /* Full width of the viewport */
+    max-height: 100%;   /* Limit the height (adjust to your preference) */
+    overflow: hidden;    /* Hide any overflow to keep it clean */
+    margin:auto;
+}
+
+.video-container video {
+    width: 100%;         /* Full width of the container */
+    height: auto;        /* Adjust height automatically */
+    object-fit: cover;   /* Ensures the video covers the entire width */
+}
+
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Share+Tech&display=swap" rel="stylesheet">
+   
+<script src="index.js" defer></script> <!-- Link to External JavaScript -->
+</head>
+<body>
+
+<!-- Header Section -->
+<div class="frame">
+    
+    <header>
+        
+        <h1>B.R. Marketing</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+        <img class="logo" src="./images/logo.png" width="150px" height="150px">
+    </header>
+
+
+<section id="intro" class="intro">
+    <p class="introtxt">high-quality industrial valves<br> and fittings</p>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button onclick="performSearch()">Search</button>
+    </div>
+
+</section>
+</div>
+
+<section id="brochure">
+    <div class="brochure">
+        <p>Click here to download new price list.<br><a class="downlink" href="NEW PRICE LIST  HOSE.pdf" download>Download PDF</a></p>
+        
+
+    </div>
+</section>
+
+<!-- HTML for video element -->
+<div class="video-container">
+    <video src="./video/apaxx.mp4" autoplay muted loop></video>
+</div>
+
+
+<!-- Products Section with Product Grid -->
+<section id="products">
+<div>
+    <p class="prodtype pro">Valves and Filters</p >
+    <div id="generalProductGrid" class="product-grid"></div>
+</div>
+
+<div>
+    <p class="prodtype pro">Hose Products</p >
+    <p class="hosetype pro">Suction Hose</p >
+    <div id="suctionHoseGrid" class="product-grid"></div>
+    
+    <p class="hosetype pro">Garden Hose</p >
+    <div id="gardenHoseGrid" class="product-grid"></div>
+</div>
+</section>
+
+
+
+
+<!-- About Us Section -->
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>We are a wholesale trader based in Thrissur, Kerala, specializing in high-quality industrial valves and fittings. Since 2017, we’ve earned a strong reputation for providing reliable and efficient products that meet the diverse needs of our clients in various industries.
+    </p>
+    <h2>Our Partners</h2>
+
+<div class="partners-grid">
+    <p class="partner"><img src="./images/man.png"> Biju Thomas</p>
+    <p class="partner"><img src="./images/woman.png"> Rose Joffy</p>
+    <p class="partner"><img src="./images/woman.png"> Reena Jojo</p>
+    <p class="partner"><img src="./images/woman.png"> Veena Santhosh</p>
+    <p class="partner"><img src="./images/man.png"> Benny M A</p>
+    <p class="partner"><img src="./images/woman.png"> Rosy M A</p>
+    <p class="partner"><img src="./images/woman.png"> Rajasree K</p>
+</div>
+
+         
+        
+        
+           
+</section>
+
+
+<!-- Contact Us Section -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@brmarketing.com</p>
+    <p>Phone: +91 8047697759</p>
+    <p>Address: 18/534/A, Mannavu, Thrissur, Kerala, India</p>
+</section>
+
+</body>
+</html>
